@@ -1,5 +1,8 @@
 unit MyService.Model;
 
+{$WARN IMPLICIT_STRING_CAST OFF}
+{$WARN IMPLICIT_STRING_CAST_LOSS OFF}
+
 interface
 
 uses
@@ -21,7 +24,7 @@ var
 begin
   Greeting := 'Hello!';
   if Name <> '' then
-    Greeting := FormatUTF8('Hello, %s!', [Name]);
+    Greeting := Format('Hello, %s!', [Name]);
   Result := Greeting;
 end;
 
