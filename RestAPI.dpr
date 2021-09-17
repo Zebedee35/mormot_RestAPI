@@ -15,7 +15,8 @@ uses
   mORMotHTTPServer,
   mORMotService,
   MyService.Interfaces in 'MyService.Interfaces.pas',
-  MyService.Model in 'MyService.Model.pas';
+  MyService.Model in 'MyService.Model.pas',
+  Constants in 'Constants.pas';
 
 type
   /// class implementing the background Service
