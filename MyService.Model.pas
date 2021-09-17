@@ -3,17 +3,15 @@ unit MyService.Model;
 interface
 
 uses
-  Classes, SysUtils, SynCommons, mORMot
-  , MyService.Interfaces
-  ;
-
-implementation
+  Classes, SysUtils, SynCommons, mORMot, MyService.Interfaces;
 
 type
   TMyService = class(TInterfacedObject, IMyService)
   protected
     function Hello(Name: RawUTF8): RawUTF8;
   end;
+
+implementation
 
 { TMyService }
 

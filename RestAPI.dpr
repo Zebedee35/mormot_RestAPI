@@ -21,8 +21,8 @@ type
   public
     /// the associated database model
     Model: TSQLModel;
-    /// the associated DB
-//    DB: TSQLRestServerDB;
+    /// the associated DB/
+    Rest: TSQLRestServer;
     /// the background Server processing all requests
     Server: TSQLHttpServer;
 
@@ -74,17 +74,23 @@ begin
 end;
 
 procedure TMyWinService.DoStart(Sender: TService);
-var RestServer: TSQLRestServer;
+var SFS: TServiceFactoryServer;
 begin
   if Server<>nil then
     DoStop(nil); // should never happen
 
   Model := TSQLModel.Create([]);
-//  DB := TSQLRestServerDB.Create(Model,ChangeFileExt(ExeVersion.ProgramFileName,'.db3'));
-//  DB.CreateMissingTables;
 
-  Server := TSQLHttpServer.Create('8080',[],'+',useHttpApiRegisteringURI);
-  Server.AddServer(RestServer)
+  Rest := TSQLRestServer.Create(Model, false);
+  Rest.CreateMissingTables;
+
+  SFS := Rest.ServiceDefine(TMyService, [IMyService], sicShared, SERVICE_CONTRACT_NONE_EXPECTED);
+  SFS.ResultAsJSONObjectWithoutResult := True;
+  SFS.ByPassAuthentication := True;
+  SFS.SetOptions([], [optErrorOnMissingParam]);
+
+  Server := TSQLHttpServer.Create('8080',[Rest],'+',useHttpApiRegisteringURI);
+  Server.AccessControlAllowOrigin := '*';
 end;
 
 procedure TMyWinService.DoStop(Sender: TService);
