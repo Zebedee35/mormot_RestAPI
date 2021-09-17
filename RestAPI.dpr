@@ -16,6 +16,7 @@ uses
   mORMotService,
   MyService.Interfaces in 'MyService.Interfaces.pas',
   MyService.Model in 'MyService.Model.pas',
+  MyService.DataModel in 'MyService.DataModel.pas',
   Constants in 'Constants.pas';
 
 type

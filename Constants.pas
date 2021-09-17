@@ -12,6 +12,9 @@ const
   cPORTNO   = 1433;
   cDATABASE = 'TESTDB';
 
+  cSQL_ALLUSER = 'SELECT FullName FROM User ';
+  cSQL_RETRIEVEUSER = 'SELECT RecID, UserName, FullName FROM User where RecID= %d';
+
 implementation
 
 end.

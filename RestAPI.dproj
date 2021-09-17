@@ -77,6 +77,7 @@
 			</DelphiCompile>
 			<DCCReference Include="MyService.Interfaces.pas"/>
 			<DCCReference Include="MyService.Model.pas"/>
+			<DCCReference Include="MyService.DataModel.pas"/>
 			<DCCReference Include="Constants.pas"/>
 			<None Include="ModelSupport_RestAPI\default.txaPackage"/>
 			<BuildConfiguration Include="Release">
