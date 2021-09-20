@@ -19,6 +19,7 @@ type
   protected
     function Hello(Name: RawUTF8): RawUTF8;
     function allUsers: RawJSON;
+  public
     function retrieve_User(RecID: Integer): RawJSON;
   end;
 
@@ -75,7 +76,7 @@ function TMyService.retrieve_User(RecID: Integer): RawJSON;
 var Greeting: RawJSON;
     fDB: TSQLDBConnectionProp;
 begin
-  Greeting := 'Hello!';
+  Greeting := '';
   fDB := TSQLDBConnectionProp.CreateMSSQLConnection(Connection);
   try
     fDB.Connect;

@@ -75,10 +75,11 @@
 			<DelphiCompile Include="$(MainSource)">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
+			<DCCReference Include="Constants.pas"/>
 			<DCCReference Include="MyService.Interfaces.pas"/>
 			<DCCReference Include="MyService.Model.pas"/>
 			<DCCReference Include="MyService.DataModel.pas"/>
-			<DCCReference Include="Constants.pas"/>
+			<DCCReference Include="MyService.pas"/>
 			<None Include="ModelSupport_RestAPI\default.txaPackage"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>

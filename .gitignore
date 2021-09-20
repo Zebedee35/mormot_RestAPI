@@ -59,6 +59,7 @@
 *.tvsconfig
 *.dsk
 *.skincfg
+*.txaPackage
 
 # Delphi history and backups
 __history/
