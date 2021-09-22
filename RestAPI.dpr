@@ -51,6 +51,7 @@ begin
         TServiceController.CheckParameters(ExeVersion.ProgramFileName, ExeVersion.ProgramName, SERVICE_DESCRIPTION, SERVICE_DESCRIPTION);
         with TServiceController.CreateOpenService('', '', ExeVersion.ProgramName) do
         try
+          // TODO
           State; // just to log the service state after handling the /parameters
         finally
           Free;
@@ -76,7 +77,7 @@ begin
     end
     else
     begin
-      with TMyWinService.Create(ExeVersion.ProgramName, SERVICE_DESCRIPTION) do
+      with TMyApiService.Create do
         try
           ServicesRun;
         finally
