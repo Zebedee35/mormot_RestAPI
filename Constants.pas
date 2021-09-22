@@ -12,8 +12,9 @@ const
   cPORTNO   = 1433;
   cDATABASE = 'TESTDB';
 
-  cSQL_ALLUSER = 'SELECT FullName FROM User ';
-  cSQL_RETRIEVEUSER = 'SELECT RecID, UserName, FullName FROM User where RecID= %d';
+
+  cSQL_ALLUSER = 'SELECT LogonName FROM AuthUser ';
+  cSQL_RETRIEVEUSER = 'SELECT ID, LogonName, DisplayName FROM AuthUser where ID= %d';
 
   cALLOW_API = '111222333';
 

@@ -52,6 +52,8 @@ function getAlgo(const Value: RawUTF8): TSignAlgo;
 
 implementation
 
+uses Base.RestServer;
+
 function getAlgo(const Value: RawUTF8): TSignAlgo;
 var i : TSignAlgo;
 begin

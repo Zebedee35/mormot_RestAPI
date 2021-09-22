@@ -7,7 +7,7 @@ interface
 
 uses
   Classes, SysUtils, SynCommons, mORMot,
-  MyService.Interfaces, MyService.DataModel;
+  MyService.Interfaces, Base.SQLConnectionProp;
 
 type
   TMyService = class(TInterfacedObject, IMyService)

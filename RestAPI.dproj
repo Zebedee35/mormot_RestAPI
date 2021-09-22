@@ -78,8 +78,13 @@
 			<DCCReference Include="Constants.pas"/>
 			<DCCReference Include="MyService.Interfaces.pas"/>
 			<DCCReference Include="MyService.Model.pas"/>
-			<DCCReference Include="MyService.DataModel.pas"/>
+			<DCCReference Include="Base.SQLConnectionProp.pas"/>
 			<DCCReference Include="MyService.pas"/>
+			<DCCReference Include="Base.Service.pas"/>
+			<DCCReference Include="Base.RestServer.pas"/>
+			<DCCReference Include="Base.RestClient.pas"/>
+			<DCCReference Include="MyAPIService.pas"/>
+			<DCCReference Include="MyAPIService.Interfaces.pas"/>
 			<None Include="ModelSupport_RestAPI\default.txaPackage"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>

@@ -1,4 +1,4 @@
-unit MyService.DataModel;
+unit Base.SQLConnectionProp;
 
 {$WARN IMPLICIT_STRING_CAST OFF}
 {$WARN IMPLICIT_STRING_CAST_LOSS OFF}

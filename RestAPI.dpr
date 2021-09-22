@@ -15,11 +15,17 @@ uses
   mORMot,
   mORMotHTTPServer,
   mORMotService,
+  SynSQLite3Static,
   Constants in 'Constants.pas',
   MyService.Interfaces in 'MyService.Interfaces.pas',
   MyService.Model in 'MyService.Model.pas',
-  MyService.DataModel in 'MyService.DataModel.pas',
-  MyService in 'MyService.pas';
+  Base.SQLConnectionProp in 'Base.SQLConnectionProp.pas',
+  MyService in 'MyService.pas',
+  Base.Service in 'Base.Service.pas',
+  Base.RestServer in 'Base.RestServer.pas',
+  Base.RestClient in 'Base.RestClient.pas',
+  MyAPIService in 'MyAPIService.pas',
+  MyAPIService.Interfaces in 'MyAPIService.Interfaces.pas';
 
 const
   SERVICE_Name = 'MyRestAPI_Service';
@@ -52,12 +58,14 @@ begin
       end
       else
       if SameText(Param1,'/c') then
-        with TMyWinService.CreateAsConsole do
+        with TMyApiService.CreateAsConsole do
           try
             DoStart(nil);
 
             writeln(#10);
-            ConsoleWrite('Service is running', ccLightGreen);
+            ConsoleWrite('Service is running: PORT:8080', ccLightGreen);
+            ConsoleWrite('FULL_URL: http://localhost:8080/a/', ccLightGray);
+            ConsoleWrite('', ccLightGray);
             ConsoleWrite('Press [Enter] to close the server', ccLightGray);
             ConsoleWaitForEnterKey; // ReadLn if you do not use main thread execution
 
